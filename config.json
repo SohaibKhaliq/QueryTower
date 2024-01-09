@@ -1,0 +1,14 @@
+{
+    "url": "http://localhost:4567",
+    "secret": "ab95a33d-0e7b-4b95-bb0c-4e3c1e433689",
+    "database": "mongo",
+    "port": "4567",
+    "mongo": {
+        "host": "127.0.0.1",
+        "port": "27017",
+        "username": "",
+        "password": "",
+        "database": "QueryTower_DB",
+        "uri": ""
+    }
+}

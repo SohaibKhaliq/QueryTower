@@ -1,0 +1,10 @@
+[
+	{
+		"widget": "html",
+		"data" : {
+			"html": "<footer id=\"footer\" class=\"container footer d-flex flex-column align-items-center gap-1 mb-2\">\n\t<span>QueryTower</span></footer>",
+			"title":"",
+			"container":""
+		}
+	}
+]
