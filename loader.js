@@ -46,10 +46,7 @@ Loader.init = function () {
 
 Loader.displayStartupMessages = function () {
 	console.log('');
-	console.log(`NodeBB v${pkg.version} Copyright (C) 2013-${(new Date()).getFullYear()} NodeBB Inc.`);
-	console.log('This program comes with ABSOLUTELY NO WARRANTY.');
-	console.log('This is free software, and you are welcome to redistribute it under certain conditions.');
-	console.log('For the full license, please visit: http://www.gnu.org/copyleft/gpl.html');
+	console.log(`QueryTower v${pkg.version} Copyright (C) ${(new Date()).getFullYear()} Digitics Inc.`);
 	console.log('');
 };
 
