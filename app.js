@@ -30,7 +30,7 @@ winston.verbose('* using configuration stored in: %s', configFile);
 
 if (!process.send) {
 	// If run using `node app`, log GNU copyright info along with server info
-	winston.info(`NodeBB v${nconf.get('version')} Copyright (C) 2013-${(new Date()).getFullYear()} NodeBB Inc.`);
+	winston.info(`QueryTower v${nconf.get('version')} Copyright (C) ${(new Date()).getFullYear()} Digitics Inc.`);
 	winston.info('');
 }
 
