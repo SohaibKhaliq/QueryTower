@@ -35,7 +35,7 @@ postgresModule.questions = [
 	{
 		name: 'postgres:database',
 		description: 'PostgreSQL database name',
-		default: nconf.get('postgres:database') || 'nodebb',
+		default: nconf.get('postgres:database') || 'QueryTower',
 	},
 	{
 		name: 'postgres:ssl',
@@ -54,7 +54,7 @@ postgresModule.init = async function (opts) {
 	try {
 		await checkUpgrade(client);
 	} catch (err) {
-		winston.error(`NodeBB could not connect to your PostgreSQL database. PostgreSQL returned the following error: ${err.message}`);
+		winston.error(`QueryTower could not connect to your PostgreSQL database. PostgreSQL returned the following error: ${err.message}`);
 		throw err;
 	} finally {
 		client.release();
@@ -77,11 +77,11 @@ SELECT EXISTS(SELECT *
        EXISTS(SELECT *
                 FROM "information_schema"."routines"
                WHERE "routine_schema" = 'public'
-                 AND "routine_name" = 'nodebb_get_sorted_set_members') c,
+                 AND "routine_name" = 'QueryTower_get_sorted_set_members') c,
 		EXISTS(SELECT *
 				FROM "information_schema"."routines"
 			   WHERE "routine_schema" = 'public'
-				 AND "routine_name" = 'nodebb_get_sorted_set_members_withscores') d`);
+				 AND "routine_name" = 'QueryTower_get_sorted_set_members_withscores') d`);
 
 	if (res.rows[0].a && res.rows[0].b && res.rows[0].c && res.rows[0].d) {
 		return;
@@ -273,7 +273,7 @@ SELECT "_key", "type"
 
 		if (!res.rows[0].c) {
 			await client.query(`
-CREATE FUNCTION "nodebb_get_sorted_set_members"(TEXT) RETURNS TEXT[] AS $$
+CREATE FUNCTION "QueryTower_get_sorted_set_members"(TEXT) RETURNS TEXT[] AS $$
     SELECT array_agg(z."value" ORDER BY z."score" ASC)
       FROM "legacy_object_live" o
      INNER JOIN "legacy_zset" z
@@ -288,7 +288,7 @@ PARALLEL SAFE`);
 
 		if (!res.rows[0].d) {
 			await client.query(`
-			CREATE FUNCTION "nodebb_get_sorted_set_members_withscores"(TEXT) RETURNS JSON AS $$
+			CREATE FUNCTION "QueryTower_get_sorted_set_members_withscores"(TEXT) RETURNS JSON AS $$
 				SELECT json_agg(json_build_object('value', z."value", 'score', z."score") ORDER BY z."score" ASC) as item
 				  FROM "legacy_object_live" o
 				 INNER JOIN "legacy_zset" z

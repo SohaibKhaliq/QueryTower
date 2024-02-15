@@ -255,8 +255,8 @@ Controllers.robots = function (req, res) {
 
 Controllers.manifest = async function (req, res) {
 	const manifest = {
-		name: meta.config.title || 'NodeBB',
-		short_name: meta.config['title:short'] || meta.config.title || 'NodeBB',
+		name: meta.config.title || 'QueryTower',
+		short_name: meta.config['title:short'] || meta.config.title || 'QueryTower',
 		start_url: nconf.get('url'),
 		display: 'standalone',
 		orientation: 'portrait',

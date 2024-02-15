@@ -118,7 +118,7 @@ function versionCheck() {
 	const compatible = semver.satisfies(version, range);
 
 	if (!compatible) {
-		winston.warn('Your version of Node.js is too outdated for NodeBB. Please update your version of Node.js.');
+		winston.warn('Your version of Node.js is too outdated for QueryTower. Please update your version of Node.js.');
 		winston.warn(`Recommended ${chalk.green(range)}, ${chalk.yellow(version)} provided\n`);
 	}
 }

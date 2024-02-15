@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>NodeBB Web Installer</title>
+	<title>QueryTower Web Installer</title>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="installer.css">
@@ -15,7 +15,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg bg-light">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">NodeBB</a>
+			<a class="navbar-brand" href="#">QueryTower</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -31,8 +31,8 @@
 	{{{ if !installing }}}
 	<div class="container {{{ if success }}}hide{{{ end }}}">
 		<p>
-			<h1>Welcome to the NodeBB Installer</h1>
-			You are just a few steps away from launching your own NodeBB forum!
+			<h1>Welcome to the QueryTower Installer</h1>
+			You are just a few steps away from launching your own QueryTower forum!
 		</p>
 		<form id="install" action="/" method="post" autocomplete="off">
 			{{{ if !skipGeneralSetup }}}
@@ -47,7 +47,7 @@
 						<label class="form-label" for="install:url">Web Address (URL)</label>
 						<input id="install:url" type="text" class="form-control" name="url" value="{{{ if url }}}{url}{{{ end }}}" placeholder="http://localhost:4567" />
 					</div>
-					<div class="col-sm-5 form-text" data-help="This is the address that resolves to your NodeBB forum. If no port is specified, <code>4567</code> will be used."></div>
+					<div class="col-sm-5 form-text" data-help="This is the address that resolves to your QueryTower forum. If no port is specified, <code>4567</code> will be used."></div>
 				</div>
 			</div>
 			{{{ end }}}

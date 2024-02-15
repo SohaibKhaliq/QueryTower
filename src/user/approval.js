@@ -76,7 +76,7 @@ module.exports = function (User) {
 		await plugins.hooks.fire('filter:register.complete', { uid: uid });
 		await emailer.send('registration_accepted', uid, {
 			username: username,
-			subject: `[[email:welcome-to, ${meta.config.title || meta.config.browserTitle || 'NodeBB'}]]`,
+			subject: `[[email:welcome-to, ${meta.config.title || meta.config.browserTitle || 'QueryTower'}]]`,
 			template: 'registration_accepted',
 			uid: uid,
 		}).catch(err => winston.error(`[emailer.send] ${err.stack}`));

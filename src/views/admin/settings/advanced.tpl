@@ -45,7 +45,7 @@
 				</div>
 				<div class="mb-3">
 					<label class="form-label" for="powered-by">[[admin/settings/advanced:headers.powered-by]]</label>
-					<input class="form-control" id="powered-by" type="text" placeholder="NodeBB" data-field="powered-by" />
+					<input class="form-control" id="powered-by" type="text" placeholder="QueryTower" data-field="powered-by" />
 				</div>
 				<div class="mb-3">
 					<label class="form-label" for="access-control-allow-origin">[[admin/settings/advanced:headers.acao]]</label>

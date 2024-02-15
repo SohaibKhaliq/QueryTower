@@ -172,7 +172,7 @@ module.exports = function (User) {
 		await db.pexpireAt(`invitation:token:${token}`, Date.now() + expireIn);
 
 		const username = await User.getUserField(uid, 'username');
-		const title = meta.config.title || meta.config.browserTitle || 'NodeBB';
+		const title = meta.config.title || meta.config.browserTitle || 'QueryTower';
 		const subject = await translator.translate(`[[email:invite, ${title}]]`, meta.config.defaultLang);
 
 		return {

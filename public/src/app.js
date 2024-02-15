@@ -59,7 +59,7 @@ if (document.readyState === 'loading') {
 	app.handleEarlyClicks = function () {
 		/**
 		 * Occasionally, a button or anchor (not meant to be ajaxified) is clicked before
-		 * ajaxify is ready. Capture that event and re-click it once NodeBB is ready.
+		 * ajaxify is ready. Capture that event and re-click it once QueryTower is ready.
 		 *
 		 * e.g. New Topic/Reply, post tools
 		 */

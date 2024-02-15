@@ -97,7 +97,7 @@ if (!testDbConfig) {
 		'    "port": "27017,27018,27019",\n' +
 		'    "username": "",\n' +
 		'    "password": "",\n' +
-		'    "database": "nodebb_test"\n' +
+		'    "database": "querytower_test"\n' +
 		'}\n' +
 		' or (postgres):\n' +
 		'"test_database": {\n' +
@@ -105,7 +105,7 @@ if (!testDbConfig) {
 		'    "port": "5432",\n' +
 		'    "username": "postgres",\n' +
 		'    "password": "",\n' +
-		'    "database": "nodebb_test"\n' +
+		'    "database": "querytower_test"\n' +
 		'}\n' +
 		'==========================================================='
 	);

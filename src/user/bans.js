@@ -50,7 +50,7 @@ module.exports = function (User) {
 
 		// Email notification of ban
 		const username = await User.getUserField(uid, 'username');
-		const siteTitle = meta.config.title || 'NodeBB';
+		const siteTitle = meta.config.title || 'QueryTower';
 
 		const data = {
 			subject: `[[email:banned.subject, ${siteTitle}]]`,

@@ -238,7 +238,7 @@ async function checkMaintenance(socket) {
 		return;
 	}
 	const validator = require('validator');
-	throw new Error(`[[pages:maintenance.text, ${validator.escape(String(meta.config.title || 'NodeBB'))}]]`);
+	throw new Error(`[[pages:maintenance.text, ${validator.escape(String(meta.config.title || 'QueryTower'))}]]`);
 }
 
 async function validateSession(socket, errorMsg) {

@@ -143,12 +143,11 @@ describe('new Translator(language)', () => {
 		});
 
 		it('should translate escaped translation arguments properly', () => {
-			// https://github.com/NodeBB/NodeBB/issues/9206
 			const translator = Translator.create('en-GB');
 
-			const key = '[[notifications:upvoted-your-post-in, test1, error: Error: &lsqb;&lsqb;error:group-name-too-long&rsqb;&rsqb; on NodeBB Upgrade]]';
+			const key = '[[notifications:upvoted-your-post-in, test1, error: Error: &lsqb;&lsqb;error:group-name-too-long&rsqb;&rsqb; on QueryTower Upgrade]]';
 			return translator.translate(key).then((translated) => {
-				assert.strictEqual(translated, '<strong>test1</strong> has upvoted your post in <strong>error: Error: &lsqb;&lsqb;error:group-name-too-long&rsqb;&rsqb; on NodeBB Upgrade</strong>.');
+				assert.strictEqual(translated, '<strong>test1</strong> has upvoted your post in <strong>error: Error: &lsqb;&lsqb;error:group-name-too-long&rsqb;&rsqb; on QueryTower Upgrade</strong>.');
 			});
 		});
 

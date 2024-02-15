@@ -118,7 +118,7 @@ describe('locks', () => {
 	beforeEach(async () => {
 		const [username, password] = [utils.generateUUID().slice(0, 10), utils.generateUUID()];
 		uid = await user.create({ username, password });
-		email = `${username}@nodebb.org`;
+		email = `${username}@digitics.org`;
 		await user.setUserField(uid, 'email', email);
 		await user.email.confirmByUid(uid);
 	});

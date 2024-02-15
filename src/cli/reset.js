@@ -22,7 +22,6 @@ exports.reset = async function (options) {
 				await resetThemes();
 			} else {
 				if (!themeNamePattern.test(themeId)) {
-					// Allow omission of `nodebb-theme-`
 					themeId = `nodebb-theme-${themeId}`;
 				}
 

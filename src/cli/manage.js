@@ -21,7 +21,6 @@ async function install(plugin, options) {
 	try {
 		await db.init();
 		if (!pluginNamePattern.test(plugin)) {
-			// Allow omission of `nodebb-plugin-`
 			plugin = `nodebb-plugin-${plugin}`;
 		}
 
@@ -60,7 +59,6 @@ async function activate(plugin) {
 	try {
 		await db.init();
 		if (!pluginNamePattern.test(plugin)) {
-			// Allow omission of `nodebb-plugin-`
 			plugin = `nodebb-plugin-${plugin}`;
 		}
 

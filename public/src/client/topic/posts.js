@@ -110,7 +110,6 @@ define('forum/topic/posts', [
 			const repliesSelector = $('[component="post"]:not([data-index=0]), [component="topic/event"]');
 			createNewPosts(data, repliesSelector, direction, false, scrollToPost);
 		} else if (ajaxify.data.scrollToMyPost && parseInt(posts[0].uid, 10) === parseInt(app.user.uid, 10)) {
-			// https://github.com/NodeBB/NodeBB/issues/5004#issuecomment-247157441
 			setTimeout(function () {
 				pagination.loadPage(ajaxify.data.pagination.pageCount, scrollToPost);
 			}, 250);

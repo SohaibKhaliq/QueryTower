@@ -30,7 +30,7 @@ Tags.parse = async (req, data, meta, link) => {
 		content: 'yes',
 	}, {
 		property: 'og:site_name',
-		content: Meta.config.title || 'NodeBB',
+		content: Meta.config.title || 'QueryTower',
 	}, {
 		name: 'msapplication-badge',
 		content: `frequency=30; polling-uri=${url}/sitemap.xml`,
@@ -73,7 +73,7 @@ Tags.parse = async (req, data, meta, link) => {
 		defaultLinks.push({
 			rel: 'search',
 			type: 'application/opensearchdescription+xml',
-			title: utils.escapeHTML(String(Meta.config.title || Meta.config.browserTitle || 'NodeBB')),
+			title: utils.escapeHTML(String(Meta.config.title || Meta.config.browserTitle || 'QueryTower')),
 			href: `${relative_path}/osd.xml`,
 		});
 	}
@@ -166,7 +166,7 @@ Tags.parse = async (req, data, meta, link) => {
 
 	await addSiteOGImage(meta);
 
-	addIfNotExists(meta, 'property', 'og:title', Meta.config.title || 'NodeBB');
+	addIfNotExists(meta, 'property', 'og:title', Meta.config.title || 'QueryTower');
 	const ogUrl = url + (req.originalUrl !== '/' ? stripRelativePath(req.originalUrl) : '');
 	addIfNotExists(meta, 'property', 'og:url', ogUrl);
 	addIfNotExists(meta, 'name', 'description', Meta.config.description);

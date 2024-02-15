@@ -112,7 +112,6 @@ Themes.set = async (data) => {
 					throw new Error('[[error:theme-not-set-in-configuration]]');
 				}
 
-				// Re-set the themes path (for when NodeBB is reloaded)
 				Themes.setPath(config);
 
 				await Meta.configs.setMultiple({

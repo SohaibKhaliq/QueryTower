@@ -242,7 +242,7 @@ helpers.buildTitle = function (pageTitle) {
 	pageTitle = pageTitle || '';
 	const titleLayout = meta.config.titleLayout || `${pageTitle ? '{pageTitle} | ' : ''}{browserTitle}`;
 
-	const browserTitle = validator.escape(String(meta.config.browserTitle || meta.config.title || 'NodeBB'));
+	const browserTitle = validator.escape(String(meta.config.browserTitle || meta.config.title || 'QueryTower'));
 
 	const title = titleLayout.replace('{pageTitle}', () => pageTitle).replace('{browserTitle}', () => browserTitle);
 	return title;

@@ -25,7 +25,7 @@ describe('Categories', () => {
 
 	it('should create a new category', (done) => {
 		Categories.create({
-			name: 'Test Category & NodeBB',
+			name: 'Test Category & QueryTower',
 			description: 'Test category created by testing script',
 			icon: 'fa-check',
 			blockclass: 'category-blue',

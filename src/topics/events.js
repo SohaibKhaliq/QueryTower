@@ -25,7 +25,6 @@ const Events = module.exports;
  * You can then log a custom topic event by calling `topics.events.log(tid, { type, uid });`
  * `uid` is optional; if you pass in a valid uid in the payload,
  * the user avatar/username will be rendered as part of the event text
- * see https://github.com/NodeBB/nodebb-plugin-question-and-answer/blob/master/library.js#L288-L306
  */
 Events._types = {
 	pin: {

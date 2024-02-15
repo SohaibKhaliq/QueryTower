@@ -27,7 +27,7 @@ describe('authentication', () => {
 			method: dummyEmailerHook,
 		});
 
-		user.create({ username: 'regular', password: 'regularpwd', email: 'regular@nodebb.org' }, (err, uid) => {
+		user.create({ username: 'regular', password: 'regularpwd', email: 'regular@digitcs.org' }, (err, uid) => {
 			assert.ifError(err);
 			regularUid = uid;
 			assert.strictEqual(uid, 1);
@@ -42,7 +42,7 @@ describe('authentication', () => {
 	it('should allow login with email for uid 1', async () => {
 		const oldValue = meta.config.allowLoginWith;
 		meta.config.allowLoginWith = 'username-email';
-		const { response } = await helpers.loginUser('regular@nodebb.org', 'regularpwd');
+		const { response } = await helpers.loginUser('regular@digitcs.org', 'regularpwd');
 		assert.strictEqual(response.statusCode, 200);
 		meta.config.allowLoginWith = oldValue;
 	});
@@ -50,8 +50,8 @@ describe('authentication', () => {
 	it('second user should fail to login with email since email is not confirmed', async () => {
 		const oldValue = meta.config.allowLoginWith;
 		meta.config.allowLoginWith = 'username-email';
-		const uid = await user.create({ username: '2nduser', password: '2ndpassword', email: '2nduser@nodebb.org' });
-		const { response, body } = await helpers.loginUser('2nduser@nodebb.org', '2ndpassword');
+		const uid = await user.create({ username: '2nduser', password: '2ndpassword', email: '2nduser@digitcs.org' });
+		const { response, body } = await helpers.loginUser('2nduser@digitcs.org', '2ndpassword');
 		assert.strictEqual(response.statusCode, 403);
 		assert.strictEqual(body, '[[error:invalid-login-credentials]]');
 		meta.config.allowLoginWith = oldValue;
@@ -100,7 +100,7 @@ describe('authentication', () => {
 		const { body } = await request.post(`${nconf.get('url')}/register`, {
 			jar,
 			body: {
-				email: 'admin@nodebb.org',
+				email: 'admin@digitcs.org',
 				username: 'admin',
 				password: 'adminpwd',
 				'password-confirm': 'adminpwd',
@@ -112,7 +112,7 @@ describe('authentication', () => {
 			},
 		});
 
-		const validationPending = await user.email.isValidationPending(body.uid, 'admin@nodebb.org');
+		const validationPending = await user.email.isValidationPending(body.uid, 'admin@digitcs.org');
 		assert.strictEqual(validationPending, true);
 
 		assert(body);
@@ -392,17 +392,17 @@ describe('authentication', () => {
 
 
 	it('should be able to login with email', async () => {
-		const email = 'ginger@nodebb.org';
+		const email = 'ginger@digitcs.org';
 		const uid = await user.create({ username: 'ginger', password: '123456', email });
 		await user.setUserField(uid, 'email', email);
 		await user.email.confirmByUid(uid);
-		const { response } = await helpers.loginUser('ginger@nodebb.org', '123456');
+		const { response } = await helpers.loginUser('ginger@digitcs.org', '123456');
 		assert.equal(response.statusCode, 200);
 	});
 
 	it('should fail to login if login type is username and an email is sent', async () => {
 		meta.config.allowLoginWith = 'username';
-		const { response, body } = await helpers.loginUser('ginger@nodebb.org', '123456');
+		const { response, body } = await helpers.loginUser('ginger@digitcs.org', '123456');
 		meta.config.allowLoginWith = 'username-email';
 		assert.equal(response.statusCode, 400);
 		assert.equal(body, '[[error:wrong-login-type-username]]');

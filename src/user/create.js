@@ -112,7 +112,7 @@ module.exports = function (User) {
 			await User.email.sendValidationEmail(userData.uid, {
 				email: data.email,
 				template: 'welcome',
-				subject: `[[email:welcome-to, ${meta.config.title || meta.config.browserTitle || 'NodeBB'}]]`,
+				subject: `[[email:welcome-to, ${meta.config.title || meta.config.browserTitle || 'QueryTower'}]]`,
 			}).catch(err => winston.error(`[user.create] Validation email failed to send\n[emailer.send] ${err.stack}`));
 		}
 		if (userNameChanged) {

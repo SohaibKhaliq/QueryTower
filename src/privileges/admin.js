@@ -82,7 +82,6 @@ privsAdmin.routePrefixMap = {
 };
 
 // Mapping for socket call methods to a privilege
-// In NodeBB v2, these socket calls will be removed in favour of xhr calls
 privsAdmin.socketMap = {
 	'admin.rooms.getAll': 'admin:dashboard',
 	'admin.analytics.get': 'admin:dashboard',

@@ -14,7 +14,7 @@ const categoriesController = module.exports;
 categoriesController.list = async function (req, res) {
 	res.locals.metaTags = [{
 		name: 'title',
-		content: String(meta.config.title || 'NodeBB'),
+		content: String(meta.config.title || 'QueryTower'),
 	}, {
 		property: 'og:type',
 		content: 'website',

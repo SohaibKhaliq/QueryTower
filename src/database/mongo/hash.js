@@ -255,7 +255,6 @@ module.exports = function (module) {
 			return result && result.value ? result.value[field] : null;
 		} catch (err) {
 			// if there is duplicate key error retry the upsert
-			// https://github.com/NodeBB/NodeBB/issues/4467
 			// https://jira.mongodb.org/browse/SERVER-14322
 			// https://docs.mongodb.org/manual/reference/command/findAndModify/#upsert-and-unique-index
 			if (err && err.message.includes('E11000 duplicate key error')) {

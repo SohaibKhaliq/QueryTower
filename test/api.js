@@ -412,7 +412,7 @@ describe('API', async () => {
 
 			Object.keys(context).forEach((_method) => {
 				// Only test GET routes in the Read API
-				if (api.info.title === 'NodeBB Read API' && _method !== 'get') {
+				if (api.info.title === 'QueryTower Read API' && _method !== 'get') {
 					return;
 				}
 

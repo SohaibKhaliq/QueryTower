@@ -176,7 +176,7 @@ define('taskbar', ['translator', 'hooks'], function (translator, hooks) {
 			return callback();
 		}
 		translator.translate(data.options.title, function (taskTitle) {
-			const title = $('<div></div>').text(taskTitle || 'NodeBB Task').html();
+			const title = $('<div></div>').text(taskTitle || 'QueryTower Task').html();
 
 			const taskbarEl = $('<li></li>')
 				.addClass(data.options.className)

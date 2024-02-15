@@ -471,7 +471,7 @@ SELECT o."_key" k
 			name: 'getSortedSetsMembers',
 			text: `
 SELECT "_key" k,
-       "nodebb_get_sorted_set_members"("_key") m
+       "QueryTower_get_sorted_set_members"("_key") m
   FROM UNNEST($1::TEXT[]) "_key";`,
 			values: [keys],
 		});
@@ -488,7 +488,7 @@ SELECT "_key" k,
 			name: 'getSortedSetsMembersWithScores',
 			text: `
 SELECT "_key" k,
-       "nodebb_get_sorted_set_members_withscores"("_key") m
+       "QueryTower_get_sorted_set_members_withscores"("_key") m
   FROM UNNEST($1::TEXT[]) "_key";`,
 			values: [keys],
 		});

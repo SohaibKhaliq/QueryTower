@@ -54,7 +54,7 @@ mongoModule.questions = [
 	{
 		name: 'mongo:database',
 		description: 'MongoDB database name',
-		default: nconf.get('mongo:database') || 'nodebb',
+		default: nconf.get('mongo:database') || 'QueryTower',
 		ask: isUriNotSpecified,
 	},
 ];

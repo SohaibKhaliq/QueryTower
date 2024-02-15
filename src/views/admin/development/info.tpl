@@ -36,7 +36,7 @@
 						<span title="[[admin/development/info:guests]]">{info.stats.onlineGuestCount}</span> /
 						<span title="[[admin/development/info:sockets]]">{info.stats.socketCount}</span>
 					</td>
-					<td>{info.git.branch}@<a href="https://github.com/NodeBB/NodeBB/commit/{info.git.hash}" target="_blank">{info.git.hashShort}</a></td>
+					<td>{info.git.branch}@<a href="https://github.com/QueryTower/" target="_blank">{info.git.hashShort}</a></td>
 					<td>{info.process.cpuUsage}%</td>
 					<td>
 						<span title="[[admin/development/info:used-memory-process]]">{info.process.memoryUsage.humanReadable} gb</span>

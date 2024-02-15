@@ -118,7 +118,6 @@ define('hooks', [], () => {
 			Hooks.loaded[hookName].forEach(listener => listener(data));
 		}
 
-		// Backwards compatibility (remove this when we eventually remove jQuery from NodeBB core)
 		$(window).trigger(hookName, data);
 	};
 

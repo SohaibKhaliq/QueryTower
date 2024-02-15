@@ -405,8 +405,8 @@ describe('Utility Methods', () => {
 		});
 
 		it('should return true if they match', (done) => {
-			target.host = 'nodebb.org';
-			reference.host = 'nodebb.org';
+			target.host = '#';
+			reference.host = '#';
 			assert(utils.isInternalURI(target, reference, ''));
 			done();
 		});

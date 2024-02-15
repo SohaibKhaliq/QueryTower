@@ -116,7 +116,7 @@ const hookTypeToMethod = {
 
 /*
 	`data` is an object consisting of (* is required):
-		`data.hook`*, the name of the NodeBB hook
+		`data.hook`*, the name of the QueryTower hook
 		`data.method`*, the method called in that plugin (can be an array of functions)
 		`data.priority`, the relative priority of the method when it is eventually called (default: 10)
 */

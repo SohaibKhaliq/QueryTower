@@ -55,7 +55,7 @@ redisModule.checkCompatibility = async function () {
 
 redisModule.checkCompatibilityVersion = function (version, callback) {
 	if (semver.lt(version, '2.8.9')) {
-		callback(new Error('Your Redis version is not new enough to support NodeBB, please upgrade Redis to v2.8.9 or higher.'));
+		callback(new Error('Your Redis version is not new enough to support QueryTower, please upgrade Redis to v2.8.9 or higher.'));
 	}
 	callback();
 };

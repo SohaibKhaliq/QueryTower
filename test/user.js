@@ -737,17 +737,17 @@ describe('User', () => {
 					username: 'updatedUserName',
 					email: 'updatedEmail@me.com',
 					fullname: 'updatedFullname',
-					website: 'http://nodebb.org',
-					location: 'izmir',
+					website: 'http://digitics.org',
+					location: 'Islamabad',
 					groupTitle: 'testGroup',
 					birthday: '01/01/1980',
-					signature: 'nodebb is good',
+					signature: 'QueryTower is good',
 					password: '123456',
 				};
 				const result = await apiUser.update({ uid: uid }, { ...data, password: '123456', invalid: 'field' });
 				assert.equal(result.username, 'updatedUserName');
 				assert.equal(result.userslug, 'updatedusername');
-				assert.equal(result.location, 'izmir');
+				assert.equal(result.location, 'Islamabad');
 
 				const userData = await db.getObject(`user:${uid}`);
 				Object.keys(data).forEach((key) => {
@@ -1872,7 +1872,7 @@ describe('User', () => {
 			inviterUid = results.inviter;
 			adminUid = results.admin;
 
-			await User.setUserField(inviterUid, 'email', 'inviter@nodebb.org');
+			await User.setUserField(inviterUid, 'email', 'inviter@digitics.org');
 			await Promise.all([
 				groups.create({ name: OWN_PRIVATE_GROUP, ownerUid: inviterUid, private: 1 }),
 				groups.join('administrators', adminUid),
@@ -1977,7 +1977,7 @@ describe('User', () => {
 			});
 
 			it('should error if invite is sent via API with a different UID', async () => {
-				const { response, body } = await helpers.invite({ emails: 'inviter@nodebb.org', groupsToJoin: [] }, adminUid, jar, csrf_token);
+				const { response, body } = await helpers.invite({ emails: 'inviter@digitics.org', groupsToJoin: [] }, adminUid, jar, csrf_token);
 				const numInvites = await User.getInvitesNumber(adminUid);
 				assert.strictEqual(response.statusCode, 403);
 				assert.strictEqual(body.status.message, 'You do not have enough privileges for this action.');
@@ -1985,7 +1985,7 @@ describe('User', () => {
 			});
 
 			it('should succeed if email exists but not actually send an invite', async () => {
-				const { response } = await helpers.invite({ emails: 'inviter@nodebb.org', groupsToJoin: [] }, inviterUid, jar, csrf_token);
+				const { response } = await helpers.invite({ emails: 'inviter@digitics.org', groupsToJoin: [] }, inviterUid, jar, csrf_token);
 				const numInvites = await User.getInvitesNumber(adminUid);
 
 				assert.strictEqual(response.statusCode, 200);

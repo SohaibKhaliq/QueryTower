@@ -23,7 +23,7 @@ function generateXML() {
 					'xmlns:moz': 'http://www.mozilla.org/2006/browser/search/',
 				},
 			},
-			{ ShortName: trimToLength(String(meta.config.title || meta.config.browserTitle || 'NodeBB'), 16) },
+			{ ShortName: trimToLength(String(meta.config.title || meta.config.browserTitle || 'QueryTower'), 16) },
 			{ Description: trimToLength(String(meta.config.description || ''), 1024) },
 			{ InputEncoding: 'UTF-8' },
 			{
